@@ -1,4 +1,4 @@
-node_modules
+anka_reactnode_modules
 dist
 package-lock.json
 .DS_store
