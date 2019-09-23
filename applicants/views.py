@@ -16,8 +16,8 @@ class ApplicantsView(APIView):
     """
     Provides a get method handler.
     """
-    renderer_classes = [TemplateHTMLRenderer]
-    template_name = 'new_applicant.html'
+    # renderer_classes = [TemplateHTMLRenderer]
+    # template_name = 'new_applicant.html'
 
     def get_queryset(self):
         try:
@@ -49,8 +49,6 @@ class NewApplicantForm():
     def home(request):
         message = ''
         if request.method == 'POST':
-            print(121)
-            print('post method', request.POST['search'])
             query = request.POST['search']
             applicants = Applicant.objects.filter(
                 Q(first_name__contains=query) |
@@ -58,14 +56,9 @@ class NewApplicantForm():
                 Q(job_position__contains=query) |
                 Q(age__contains=query)
             )
-            # applicants = Applicant.objects.all()
-            print(333, applicants)
             if not applicants:
                 message = 'No results found'
                 applicants = Applicant.objects.all()
         else:
             applicants = Applicant.objects.all()
         return render(request, 'index.html', {'applicants': applicants, 'message': message})
-    # def home(request):
-    #     applicants = Applicant.objects.all()
-    #     return render(request, 'index.html', {'applicants': applicants})
