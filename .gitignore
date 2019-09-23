@@ -1,11 +1,11 @@
-anka_reactnode_modules
+node_modules
 dist
 package-lock.json
 .DS_store
 .vscode
 coverage
 
-damilola
+
 # Created by https://www.gitignore.io/api/django
 # Edit at https://www.gitignore.io/?templates=django
 
