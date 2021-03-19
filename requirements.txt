@@ -8,7 +8,7 @@ chardet==3.0.4
 dj-database-url==0.5.0
 Django==2.2.5
 django-heroku==0.3.1
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 fastdiff==0.2.0
 get==2019.4.13
 graphene==2.1.8
